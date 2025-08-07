@@ -23,6 +23,22 @@
       z-index: 2;
     }
 
+    #viewMenuBtn {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
     #menu-frame {
       display: none;
       width: 100vw;
@@ -41,16 +57,34 @@
   </video>
 </div>
 
+<!-- View Menu Button -->
+<button id="viewMenuBtn">View Menu</button>
+
 <!-- Menu PDF -->
 <iframe id="menu-frame" src="menu Solo.pdf"></iframe>
 
 <script>
+  // const video = document.getElementById('welcome-video');
+  // const videoContainer = document.getElementById('video-container');
+  // const menuFrame = document.getElementById('menu-frame');
+  //
+  // video.addEventListener('ended', () => {
+  //   videoContainer.style.display = 'none';
+  //   menuFrame.style.display = 'block';
+  // });
+
   const video = document.getElementById('welcome-video');
   const videoContainer = document.getElementById('video-container');
   const menuFrame = document.getElementById('menu-frame');
+  const viewMenuBtn = document.getElementById('viewMenuBtn');
 
   video.addEventListener('ended', () => {
+    viewMenuBtn.style.display = 'block';
+  });
+
+  viewMenuBtn.addEventListener('click', () => {
     videoContainer.style.display = 'none';
+    viewMenuBtn.style.display = 'none';
     menuFrame.style.display = 'block';
   });
 </script>
