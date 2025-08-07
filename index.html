@@ -24,22 +24,6 @@
       background: black;
     }
 
-    #viewMenuBtn {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 14px 28px;
-      font-size: 18px;
-      background-color: #ffffff;
-      color: #000000;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      z-index: 3;
-    }
-
     #menu-image {
       display: none;
       width: 100vw;
@@ -58,25 +42,16 @@
   </video>
 </div>
 
-<!-- View Menu Button -->
-<button id="viewMenuBtn">View Menu</button>
-
 <!-- Menu Image -->
 <img id="menu-image" src="menu-solo-img.jpg" alt="Restaurant Menu" />
 
 <script>
   const video = document.getElementById('welcome-video');
   const videoContainer = document.getElementById('video-container');
-  const viewMenuBtn = document.getElementById('viewMenuBtn');
   const menuImage = document.getElementById('menu-image');
 
-  video.addEventListener('ended', () => {
-    viewMenuBtn.style.display = 'block';
-  });
-
-  viewMenuBtn.addEventListener('click', () => {
+  video.addEventListener('click', () => {
     videoContainer.style.display = 'none';
-    viewMenuBtn.style.display = 'none';
     menuImage.style.display = 'block';
   });
 </script>
