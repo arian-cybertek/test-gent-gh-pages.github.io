@@ -50,7 +50,7 @@
   const videoContainer = document.getElementById('video-container');
   const menuImage = document.getElementById('menu-image');
 
-  video.addEventListener('click', () => {
+  video.addEventListener('ended', () => {
     videoContainer.style.display = 'none';
     menuImage.style.display = 'block';
   });
